@@ -1,0 +1,8 @@
+venv/
+CLIP
+./images
+project_data
+main.py
+main_ex.py
+/images/
+/.venv/

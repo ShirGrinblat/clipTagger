@@ -1,0 +1,10 @@
+{
+    "prompt_templates": {
+        "location": "This image was captured in an {answer} environment."
+
+    },
+    "tag_dict": {
+        "location": ["indoor", "outdoor"]
+
+    }
+}
