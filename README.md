@@ -3,6 +3,7 @@
 ## Description
 
 This project implements a simplified tagging system using PyTorch and CLIP. The goal is to classify images based on a dictionary of tags efficiently and optimize the tag embeddings for better separation of logits. This project assesses object-oriented programming and deep learning framework optimization skills.
+
 ## Requirements
 
 - Python 3.8+
@@ -15,26 +16,29 @@ This project implements a simplified tagging system using PyTorch and CLIP. The 
 - Optimized text embeddings for improved classification logits
 - Demonstrates results on a subset of COCO dataset
 
-
 Follow these steps to set up the project locally:
-
-1. Clone the repository:
+1. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
+2. Clone the repository:
    ```bash
    git clone https://github.com/ShirGrinblat/clipTagger.git
    ```
-2. Navigate to the project directory:
+3. Navigate to the project directory:
    ```bash
    cd clipTagger
    ```
-3. Install dependencies:
+4. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-4. Clone the repository CLIP:
+5. Clone the repository CLIP:
    ```bash
    git clone https://github.com/openai/CLIP.git cd CLIP
    ```
-5. Install dependencies CLIP:
+6. Install dependencies CLIP:
    ```bash
    pip install -r requirements.txt
    cd ..
