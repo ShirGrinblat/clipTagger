@@ -55,11 +55,15 @@ Follow these steps to set up the project locally:
 
 ### Part 2: Optimization
 
-1. Run the optimization script to improve text embeddings:
+1. Run the optimization script (without cross corss correlletion - splited data):
    ```bash
    python run_optimize_embeddings.py --base_dir project_data --model_name RN50 --epochs 100 --learning_rate 0.004 --batch_size 32 --patience 3 --weight_decay 0.01 --min_delta 0.01 --tags indoors outdoors 
    ```
-2. Compare the logits before and after optimization:
+2. Run the optimization script (with cross corss correlletion - splited data):
+   ```bash
+   python run_optimize_embeddings_cv.py --base_dir ./project_data --results_dir ./project_data/results --force_download --model_name RN50 --n_splits 3 --random_seed 42 --epochs 25 --batch_size 8 --learning_rate 0.001 --patience 5 --weight_decay 0.0005 --min_delta 0.0005 --no_cache
+   ```
+3. Run code with optimization weight :
    ```bash
    python tagger.py --image_folder images --model_name RN50 --batch_size 16 --threshold 0.3 --config_file prompts_tags.json --model_path project_data/weights/optimized/indoor_outdoor_embeddings_v.pt
 
