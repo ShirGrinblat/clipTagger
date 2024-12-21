@@ -3,6 +3,11 @@
 ## Description
 
 This project implements a simplified tagging system using PyTorch and CLIP. The goal is to classify images based on a dictionary of tags efficiently and optimize the tag embeddings for better separation of logits. This project assesses object-oriented programming and deep learning framework optimization skills.
+## Requirements
+
+- Python 3.8+
+- PyTorch
+- CLIP
 
 ## Features
 
@@ -48,54 +53,19 @@ Follow these steps to set up the project locally:
 
 1. Run the optimization script to improve text embeddings:
    ```bash
-   python optimize_embeddings.py
+   python run_optimize_embeddings.py --base_dir project_data --model_name RN50 --epochs 100 --learning_rate 0.004 --batch_size 32 --patience 3 --weight_decay 0.01 --min_delta 0.01 --tags indoors outdoors 
    ```
 2. Compare the logits before and after optimization:
-   ```python
-   optimizer = EmbeddingOptimizer()
-   optimized_tags = optimizer.optimize(tag_dict)
-   print(optimized_tags)
-   ```
-
-## Requirements
-
-- Python 3.8+
-- PyTorch
-- CLIP
-- COCO dataset (subset for demonstration)
-
-Install dependencies using:
-```bash
-pip install -r requirements.txt
-```
-
-## Contributing
-
-Contributions are welcome! Follow these steps to contribute:
-1. Fork the repository.
-2. Create a new branch:
    ```bash
-   git checkout -b feature/your-feature-name
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Add your feature"
-   ```
-4. Push to the branch:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-5. Open a pull request.
+   python tagger.py --image_folder images --model_name RN50 --batch_size 16 --threshold 0.3 --config_file prompts_tags.json --model_path project_data/weights/optimized/indoor_outdoor_embeddings_v.pt
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+   ```
 
 ## Contact
 
 For any questions or suggestions, contact:
 
-- **Name**: Your Name  
-- **Email**: your.email@example.com  
-- **LinkedIn**: [Your Profile](https://linkedin.com/in/your-profile)  
-- **GitHub**: [Your GitHub](https://github.com/username)
+- **Name**: Shir Grinblat 
+- **Email**: shirgrinblat@gmail.com
+- **LinkedIn**: [link](https://www.linkedin.com/in/shir-grinblat/)  
+- **GitHub**: [link](https://github.com/ShirGrinblat)
