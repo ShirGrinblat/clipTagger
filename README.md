@@ -63,6 +63,10 @@ This project implements a tagging system using PyTorch and CLIP for efficient im
    ```bash
    python tagger.py --image_folder images --model_name RN50 --batch_size 16 --threshold 0.3 --config_file prompts_tags.json --model_path project_data/weights/optimized/indoor_outdoor_embeddings_v.pt
    ```
+4. **compare models**:
+   ```bash
+   python compare_models.py --model_name RN50 --optimized_embeddings project_data/results/20241221_201352/best_embeddings_fold_2.pt --unlabeled_images_dir images --output_dir output_results --batch_size 32
+   ```
 
 ## Contact
 
